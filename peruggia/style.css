@@ -1,0 +1,120 @@
+
+/*
+ * This file is part of Peruggia.
+ *
+ * Peruggia is free software; you can redistribute it and/or modify it under the
+ * terms of the GNU General Public License as published by the Free Software
+ * Foundation; either version 3 of the License, or (at your option) any later
+ * version.
+ *
+ * Peruggia is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+ * A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License along with
+ * Peruggia; if not, write to the Free Software Foundation, Inc.,
+ * 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
+ */
+
+body {
+background: #001030 url("background.png") center;
+background-repeat: repeat-y;
+margin: 0px;
+}
+
+h1 {
+font-family: arial;
+font-size: 36;
+color: #001030;
+margin: 0px;
+}
+
+h2 {
+font-family: arial;
+font-size: 20;
+color: black;
+margin: 0px;
+}
+
+h3 {
+font-family: arial;
+font-size: 16;
+margin: 0px;
+}
+
+h4 {
+font-family: arial;
+font-size: 16;
+color: #001030;
+margin: 0px;
+}
+
+h5 {
+font-family: arial;
+font-size: 16;
+color: #001030;
+margin: 0px;
+}
+
+hr {
+background-color: black;
+border-width: 0px;
+}
+
+input {
+background-color: white;
+color: black;
+border-style: solid;
+border-color: #001030;
+border-width: 1px;
+}
+
+textarea {
+background-color: white;
+border-color: #001030;
+border-style: solid;
+border-width: 1px;
+}
+
+fieldset {
+background-color: aliceblue;
+border-color: #001030;
+border-style: solid;
+border-width: 1px;
+}
+
+legend {
+font-family: arial;
+color: #001030;
+background-color: aliceblue;
+border-color: #001030;
+border-style: solid;
+border-width: 1px 1px 0px 1px;
+}
+
+a {
+text-decoration: none;
+color: #001030;
+}
+
+a:hover {
+text-decoration: underline;
+color: black;
+}
+
+img {
+border-color: #001030;
+border-style: solid;
+}
+
+img:hover {
+border-color: #001030;
+border-style: solid;
+}
+
+.box {
+border-width: 1px;
+border-color: #001030;
+border-style: solid;
+background-color: white;
+}
