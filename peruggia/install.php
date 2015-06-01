@@ -99,13 +99,13 @@ function generateRandomString($length = 10) {
     return $randomString;
 }
 
-$populate = true;
+$populate = false;
 $handle = fopen("users.txt", "r");
 if ($handle) {
 	while (($line = fgets($handle)) !== false) {
 		$pass = generateRandomString(16);
-		$populate = mysql_query("INSERT INTO users (username, password) VALUES ('$line', '$pass')", $conx);
-
+		$line = rtrim($line);
+		mysql_query("INSERT INTO users (username, password) VALUES ('$line', '$pass')", $conx);
 	}
 	fclose($handle);
 	$populate = true;
