@@ -27,7 +27,7 @@ if(isset($_GET['changepass'])){
     header("Location: ".$peruggia_root."?action=account");
   }else{
     $oldpass = $_SESSION['password'];
-    $newpass = md5($_POST['newpass']);
+    $newpass = $_POST['newpass'];
     mysql_query("UPDATE users SET password='".$newpass."' WHERE password='".$oldpass."'", $conx);
     session_destroy();
     header("Location: ".$peruggia_root."?action=account");
@@ -37,10 +37,10 @@ if(isset($_GET['changepass'])){
 
   if($guard_sqli){
     $newuser = mysql_real_escape_string($_POST['newuser']);
-    $newuserpass = mysql_real_escape_string(md5($_POST['newuserpass']));
+    $newuserpass = mysql_real_escape_string($_POST['newuserpass']);
   }else{
     $newuser = $_POST['newuser'];
-    $newuserpass = md5($_POST['newuserpass']);
+    $newuserpass = $_POST['newuserpass'];
   }
 
   mysql_query("INSERT INTO users (username,password) VALUES ('".$newuser."','".$newuserpass."')", $conx);

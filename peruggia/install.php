@@ -37,7 +37,7 @@
 include("conf.php");
 
 $app_user = "admin";
-$app_pass = md5("password");
+$app_pass = "password";
 
 $conx = mysql_connect($mysql_host, $mysql_user, $mysql_pass);
 
