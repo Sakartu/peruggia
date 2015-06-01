@@ -24,7 +24,7 @@ $mysql_pass = 		"";
 $mysql_db = 		"images";
 
 //General
-$title = 		"Images";
+$title = 		"Gallery";
 $version = 		"1.2";
 $peruggia_root = 	"http://inception.local/";
 error_reporting(0);	// You may or may not want to see these, your choice
