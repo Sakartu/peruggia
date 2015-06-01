@@ -120,8 +120,8 @@ include("includes/main.php");
 <br>
 <hr width=1000 size=5>
 <div align=center>
-<b>Peruggia <?php echo $version; ?><b> | <a href=https://sourceforge.net/projects/peruggia/>https://sourceforge.net/projects/peruggia/</a><br>
-<b>Developed by Andrew Kramer<b>
+<b>Gallery <?php echo $version; ?><b>
+<b>Developed by Andrew Kramer, modified by Sakartu<b>
 <!--</fieldset>-->
 </div>
 </body>
