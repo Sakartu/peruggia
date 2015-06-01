@@ -36,9 +36,6 @@
 
 include("conf.php");
 
-$app_user = "admin";
-$app_pass = "password";
-
 $conx = mysql_connect($mysql_host, $mysql_user, $mysql_pass);
 
 if(!$conx){
@@ -92,18 +89,36 @@ if(!mysql_num_rows(mysql_query("SHOW TABLES LIKE 'users'"))){
   echo "<font color=green>[+] Create table (exists)</font><br>";
 }
 
-$populate = mysql_query("
-INSERT INTO users (username, password)
-VALUES ('$app_user', '$app_pass')
-", $conx);
-
-if(!$populate){
-  echo "<font color=red>[-] Populate users</font><br>";
-  echo mysql_error();
-  $error = 1;
-}else{
-  echo "<font color=green>[+] Populate users</font><br>";
+function generateRandomString($length = 10) {
+    $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    $charactersLength = strlen($characters);
+    $randomString = '';
+    for ($i = 0; $i < $length; $i++) {
+        $randomString .= $characters[rand(0, $charactersLength - 1)];
+    }
+    return $randomString;
 }
+
+$populate = true;
+$handle = fopen("users.txt", "r");
+if ($handle) {
+	while (($line = fgets($handle)) !== false) {
+		$pass = generateRandomString(16);
+		$populate = mysql_query("INSERT INTO users (username, password) VALUES ('$line', '$pass')", $conx);
+
+	}
+	fclose($handle);
+	$populate = true;
+}
+
+if(!$populate) {
+	echo "<font color=red>[-] Populate users</font><br>";
+	echo mysql_error();
+	$error = 1;
+} else {
+	echo "<font color=green>[+] Populate users</font><br>";
+}
+
 
 $populate = mysql_query("
 INSERT INTO picdata (pic,uploader)
@@ -137,10 +152,7 @@ echo "<a href=index.php?action=login><b>Log in</b></a>";
 <td valign=top>
 <fieldset style=width:300;>
 <legend><b>Information</b></legend>
-Default admin username/password<br>
- - Username: <b>admin</b><br>
- - Password: <b>password</b><br>
-<br>
+There is no more default user/password, please check the database for a usable user/pass combination!
 Please delete this installer once it has completed successfuly.  Not doing so may leave undesired vulnerabilities.<br>
 <br>
 <b>Happy Hacking!</b>
