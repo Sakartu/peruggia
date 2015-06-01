@@ -26,7 +26,7 @@ $mysql_db = 		"images";
 //General
 $title = 		"Images";
 $version = 		"1.2";
-$peruggia_root = 	"http://inception.local/peruggia/";
+$peruggia_root = 	"http://inception.local/";
 error_reporting(0);	// You may or may not want to see these, your choice
 
 //Vulnerabilities (true or false)
