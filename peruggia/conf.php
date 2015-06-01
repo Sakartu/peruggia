@@ -19,14 +19,14 @@
 
 //MySQL
 $mysql_host = 		"localhost";
-$mysql_user = 		"root";
+$mysql_user = 		"images";
 $mysql_pass = 		"";
-$mysql_db = 		"target";
+$mysql_db = 		"images";
 
 //General
-$title = 		"Peruggia";
+$title = 		"Images";
 $version = 		"1.2";
-$peruggia_root = 	"http://127.0.0.1/peruggia/";
+$peruggia_root = 	"http://inception.local/peruggia/";
 error_reporting(0);	// You may or may not want to see these, your choice
 
 //Vulnerabilities (true or false)
@@ -35,7 +35,7 @@ $guard_pers_xss = 	true; //Block persistent cross site scripting
 $guard_refl_xss = 	true; //Block reflected cross site scripting
 //$guard_csrf = 	true; //Block cross site request forgery //Blocker not yet implemented
 //$guard_sesfix = 	true; //Block session fixation //Blocker not yet implemented
-$guard_sqli = 		true; //Block SQL injection
+$guard_sqli = 		false; //Block SQL injection
 $guard_auth_sqli = 	true; //Block authentication bypass SQL injection
 $guard_lfi = 		true; //Block local file inclusions
 $guard_rfi = 		true; //Block remote file inclusions
